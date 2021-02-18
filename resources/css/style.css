@@ -25,7 +25,7 @@ html {
 }
 
 .image-container img {
-  display: inline-block;
+  display: block;
   max-width: 100%;
 
 }
@@ -231,10 +231,9 @@ header .mobile {
 
 .feature {
   flex: 1;
-  padding: 2rem 0;
-  margin: 0px 1.1875rem;
+  padding: 2rem; /* 0; */
+  margin: 0px 1.25rem;
   background-color: white;
-  height: 39.7rem;
 }
 
 .feature .image-container {
@@ -244,8 +243,7 @@ header .mobile {
 }
 
 .feature .content {
-  width: 90%;
-  margin: 0 auto;
+  padding: 2.5rem 0;
 }
 
 .feature h2 {
@@ -253,7 +251,6 @@ header .mobile {
   font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
-  margin-top: 2.5rem;
 }
 
 .feature h3 {
@@ -379,7 +376,11 @@ header .mobile {
 }
 
 #quotes-section .content {
-  padding: 5rem 0;
+  padding: 5rem 1.5rem;
+  /* Correct centered layout */
+  display: flex; /* creates an inline flow */
+  align-items: center;
+  justify-content: center;
 }
 
 #quotes-section .quote {
@@ -395,14 +396,17 @@ header .mobile {
   height: 1.875rem;
 }
 
-@media only screen and (max-width: 890px) {
+@media only screen and (max-width: 895px) {
   #quotes-section .content {
+    /* With the flex flow we don't need all of this
     text-align: left;
     max-width: 90%;
     overflow: auto;
-    margin: 0 auto;
+    margin: 0 auto; */
+    padding: 3rem 1.5rem; /* in all farness, there were no instructions on the specs */
   }
 
+  /* Idem b/c of display: flex
   #quotes-section .quote {
     display: inline-block;
     float: left;
@@ -412,27 +416,30 @@ header .mobile {
   #quotes-section .quote-citation {
     float: right;
     padding-top: 1%;
-  }
+  } */
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   #quotes-section .content {
     padding: 1.875rem .625rem;
-    text-align: center;
+    flex-flow: column;
+    /* Unnecessary because we change the flex flow to column
+    text-align: center; */
   }
 
   #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
-    padding: 0;
-    float: inherit;
+    /* idem
+     padding: 0;
+    float: inherit; */
   }
 
   #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
-    float: inherit;
+    /* float: inherit; */
   }
 }
 
@@ -453,7 +460,7 @@ footer .copyright {
   flex-grow: 1;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 600px) {
   footer .content {
     font-size: .625rem;
   }
