@@ -269,11 +269,7 @@ header .mobile {
   }
 
 
-  .feature h2 {
-    text-align: left;
-  }
-
-  .feature h3 {
+  .feature .content {
     text-align: left;
   }
 }
@@ -286,15 +282,20 @@ header .mobile {
 
   .feature {
     margin: 0;
-    padding: 1.25rem 1rem 0 1rem;
+    padding: 1.25rem 1rem 1.875rem 1rem;
   }
 
-  .feature h1 {
-    font-size: 1.125rem;
-    line-height: 1.3;
+  .feature .content {
+    text-align: inherit;
   }
 
   .feature h2 {
+    font-size: 1.125rem;
+    font-weight: normal;
+    line-height: 1.3;
+  }
+
+  .feature h3 {
     font-size: .875rem;
     line-height: 1.4;
   }
@@ -362,6 +363,10 @@ header .mobile {
     padding: 0;
   }
 
+  #filters-section .image-container {
+    max-width: 33%;
+  }
+
   #filters-section .extra {
     display: none;
   }
@@ -413,17 +418,21 @@ header .mobile {
 @media only screen and (max-width: 760px) {
   #quotes-section .content {
     padding: 1.875rem .625rem;
+    text-align: center;
   }
 
   #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
+    padding: 0;
+    float: inherit;
   }
 
   #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
+    float: inherit;
   }
 }
 
